@@ -6,19 +6,26 @@
         xmlns:local="clr-namespace:Wpftest1"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="400">
-    <Grid Margin="15" Background="Beige">
-        
+    <Grid Margin="15" Background="Salmon">
+
         <!-- Rows for card sections -->
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/> <!-- Header -->
-            <RowDefinition Height="2*"/> <!-- Picture -->
-            <RowDefinition Height="Auto"/> <!-- Sub info -->
-            <RowDefinition Height="*" /> <!-- Move 1 -->
-            <RowDefinition Height="*"/> <!-- Move 2 -->
-            <RowDefinition Height="Auto"/> <!-- Weakness/Res/Retreat -->
-            <RowDefinition Height="Auto"/> <!-- Footer -->
+            <RowDefinition Height="Auto"/>
+            <!-- Header -->
+            <RowDefinition Height="2*"/>
+            <!-- Picture -->
+            <RowDefinition Height="Auto"/>
+            <!-- Sub info -->
+            <RowDefinition Height="*" />
+            <!-- Move 1 -->
+            <RowDefinition Height="*"/>
+            <!-- Move 2 -->
+            <RowDefinition Height="Auto"/>
+            <!-- Weakness/Res/Retreat -->
+            <RowDefinition Height="Auto"/>
+            <!-- Footer -->
         </Grid.RowDefinitions>
-        
+
         <!-- Columns -->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -30,73 +37,82 @@
         <!-- Header Row 0 -->
         <Grid Grid.Row="0" Grid.ColumnSpan="3" Margin="6">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/> <!-- Name -->
-                <ColumnDefinition Width="*"/> <!-- White space -->
-                <ColumnDefinition Width="Auto"/> <!-- HP -->
+                <ColumnDefinition Width="Auto"/>
+                <!-- Name -->
+                <ColumnDefinition Width="*"/>
+                <!-- White space -->
+                <ColumnDefinition Width="Auto"/>
+                <!-- HP -->
             </Grid.ColumnDefinitions>
-      
+
             <!-- Name -->
             <Border Grid.Column="0" BorderBrush="Black" BorderThickness="1" Margin="2" Padding="5">
-                <TextBlock Text="Name" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock x:Name="NameTextBlock" Text="Charmander" FontSize="20" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </Border>
-            
+
             <!--White Space -->
             <Border Grid.Column="1" BorderBrush="Black" BorderThickness="1" Margin="2" Padding="5">
-                <TextBlock Text="(Empty)" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Button Content="Choose Pokemon" Click="OpenSelectionWindowClick"/>
             </Border>
 
             <!-- HP -->
             <Border Grid.Column="2" BorderBrush="Black" BorderThickness="1" Margin="2" Padding="5">
-                <TextBlock Text="HP" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock x:Name="HpTextBlock" Text="HP 70"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2"/>
             </Border>
-            
+           
+
         </Grid>
-        
+
         <!-- Image, Row 1 -->
-        <Border Grid.Row="1" Grid.ColumnSpan="3" Margin="6" BorderBrush="Black" BorderThickness="1"  Background="LightGray">
-            <Rectangle Width="220" Height="220" Fill="DarkGray" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Border Grid.Row="1" Grid.ColumnSpan="3" Margin="6" BorderBrush="Silver" BorderThickness="3"  Background="LightGray">
+            <Image x:Name="ImageRectangle" Margin="0,-1,-7,-1" Source="/images/firefox_W4VF84iT2U.png" Stretch="Fill" HorizontalAlignment="Right" Width="360"/>
         </Border>
-      
+
         <!-- Sub Info Row 2 -->
         <Border Grid.Row="2" Grid.ColumnSpan="3" Margin="1" BorderBrush="Black" BorderThickness="1">
-            <TextBlock Text="Sub Info / Type / Weight / Height" TextAlignment="Center"/>
+            <TextBlock x:Name="SubInfoTextBlock" Text="Sub Info / Type / Weight / Height" TextAlignment="Center"/>
         </Border>
 
         <!-- Move 1 Row 3 -->
         <Grid Grid.Row="3" Grid.ColumnSpan="3" Margin="6">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/> <!-- Attack Header-->
-                <RowDefinition Height="Auto"/> <!-- Attack Description -->
+                <RowDefinition Height="Auto"/>
+                <!-- Attack Header-->
+                <RowDefinition Height="Auto"/>
+                <!-- Attack Description -->
             </Grid.RowDefinitions>
-            
-            
+
+
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/> <!-- Icon -->
-                <ColumnDefinition Width="*"/> <!-- Attack Name -->
-                <ColumnDefinition Width="Auto"/> <!-- Damage -->
+                <ColumnDefinition Width="Auto"/>
+                <!-- Icon -->
+                <ColumnDefinition Width="*"/>
+                <!-- Attack Name -->
+                <ColumnDefinition Width="Auto"/>
+                <!-- Damage -->
             </Grid.ColumnDefinitions>
-            
+
             <!-- Header Row-->
             <Border Grid.Row="0" Grid.Column="0" BorderBrush="Black" BorderThickness="1" Margin="2" Padding="5">
-                <TextBlock Text="Icon"/>
+                <TextBlock x:Name="Attack1IconTextBlock" Text="Icon"/>
             </Border>
 
             <Border Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="1" Margin="2" Padding="5">
-                <TextBlock Text="Attack Name" TextAlignment="Center"/>
+                <TextBlock x:Name="Attack1NameTextBlock" Text="Attack Name" TextAlignment="Center"/>
             </Border>
 
             <Border Grid.Row="0" Grid.Column="2" BorderBrush="Black" BorderThickness="1" Margin="2" Padding="5">
-                <TextBlock Text="Damage"/>
+                <TextBlock x:Name="Attack1DMGTextBlock" Text="Damage"/>
             </Border>
-            
+
             <!-- Description row -->
             <Border Grid.Row="1" Grid.ColumnSpan="3" BorderBrush="Black" BorderThickness="1" Margin="2" Padding="5">
-                <TextBlock Text="Attack Description goes here lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum" TextWrapping="Wrap"/>
+                <TextBlock x:Name="Attack1DescTextBlock" Text="Attack Description goes here lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum" TextWrapping="Wrap"/>
             </Border>
         </Grid>
-        
-       <!-- Move 2 Row 4--> 
-       <Grid Grid.Row="4" Grid.ColumnSpan="3" Margin="6">
+
+        <!-- Move 2 Row 4-->
+        <Grid Grid.Row="4" Grid.ColumnSpan="3" Margin="6">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -110,24 +126,24 @@
             </Grid.ColumnDefinitions>
 
             <Border Grid.Row="0" Grid.Column="0" BorderBrush="Black" BorderThickness="1" Margin="2" Padding="5">
-                <TextBlock Text="Icon"/>
+                <TextBlock x:Name="Attack2Icon" Text="Icon"/>
             </Border>
 
             <Border Grid.Row="0" Grid.Column="1" BorderBrush="Black" BorderThickness="1" Margin="2" Padding="5">
-                <TextBlock Text="Attack 2 Name" TextAlignment="Center"/>
+                <TextBlock x:Name="Attack2NameTextBlock" Text="Attack 2 Name" TextAlignment="Center"/>
             </Border>
 
             <Border Grid.Row="0" Grid.Column="2" BorderBrush="Black" BorderThickness="1" Margin="2" Padding="5">
-                <TextBlock Text="Damage"/>
+                <TextBlock x:Name="Attack2DMGTextBlock" Text="Damage"/>
             </Border>
 
             <Border Grid.Row="1" Grid.ColumnSpan="3" BorderBrush="Black" BorderThickness="1" Margin="2" Padding="5">
-                <TextBlock Text="Attack Description goes here lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum" TextWrapping="Wrap"/>
+                <TextBlock x:Name="Attack2DescTextBlock" Text="Attack Description goes here lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum" TextWrapping="Wrap"/>
             </Border>
 
         </Grid>
-        
-        
+
+
         <!-- Weakness/Res/Retreat -->
         <Grid Grid.Row="5" Grid.ColumnSpan="3" Margin="6">
             <Grid.ColumnDefinitions>
@@ -137,20 +153,20 @@
             </Grid.ColumnDefinitions>
 
             <Border Grid.Column="0" BorderBrush="Black" BorderThickness="1" Margin="2" Padding="5">
-                <TextBlock Text="Weakness"/>
+                <TextBlock x:Name="WeaknessTextBlock" Text="Weakness"/>
             </Border>
 
             <Border Grid.Column="1" BorderBrush="Black" BorderThickness="1" Margin="2" Padding="5">
-                <TextBlock Text="Resistance"/>
+                <TextBlock x:Name="ResistanceTextBlock" Text="Resistance"/>
             </Border>
 
             <Border Grid.Column="2" BorderBrush="Black" BorderThickness="1" Margin="2" Padding="5">
-                <TextBlock Text="Retreat cost"/>
+                <TextBlock x:Name="RetreatTextBlock" Text="Retreat cost"/>
             </Border>
-            
+
         </Grid>
-        
-        
+
+
         <!-- Footer -->
         <Grid Grid.Row="6" Grid.ColumnSpan="3" Margin="6">
             <Grid.ColumnDefinitions>
@@ -160,22 +176,22 @@
             </Grid.ColumnDefinitions>
 
             <Border Grid.Column="0" BorderBrush="Black" BorderThickness="1" Margin="2" Padding="5">
-                <TextBlock Text="#/SET"/>
+                <TextBlock x:Name="SetNumberTextBlock" Text="#/SET"/>
             </Border>
 
             <Border Grid.Column="1" BorderBrush="Black" BorderThickness="1" Margin="2" Padding="5">
-                <TextBlock Text="Copywright text"/>
+                <TextBlock x:Name="CopyWrightTextBlock" Text="Copywright text"/>
             </Border>
 
             <Border Grid.Column="2" BorderBrush="Black" BorderThickness="1" Margin="2" Padding="5">
-                <TextBlock Text="Lorem IpsumLorem Ipsum" TextWrapping="Wrap"/>
+                <TextBlock x:Name="FooterTextTextBlock" Text="Lorem IpsumLorem Ipsum" TextWrapping="Wrap"/>
             </Border>
-            
-            
+
+
         </Grid>
-        
-        
+
+
     </Grid>
-    
-    
+
+
 </Window>

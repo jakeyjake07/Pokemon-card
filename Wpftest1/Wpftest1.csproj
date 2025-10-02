@@ -8,4 +8,18 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="images\83-830894_fire-type-pokemon-symbol-pokemon-fire-type-logo.png" />
+    <None Remove="images\firefox_W4VF84iT2U.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="images\83-830894_fire-type-pokemon-symbol-pokemon-fire-type-logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\firefox_W4VF84iT2U.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>
